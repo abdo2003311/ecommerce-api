@@ -1,0 +1,15 @@
+{
+  "name": "ecommerce-api",
+  "version": "1.0.0",
+  "description": "this is a fake ecommerce api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abd alrhman babelly",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
