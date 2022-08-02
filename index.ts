@@ -20,9 +20,14 @@ app.use(cors());
 let connectingToDb = async () => {
 
     await mongoose.connect(DATABASE);
-   
-    setTimeout(() => {
-        CATEGORIES.forEach(async (category) => {
+
+    setTimeout(async () => {
+            try {
+                await Category.deleteMany();
+            } catch (e) {
+                console.log(e)
+            }
+            CATEGORIES.forEach(async (category) => {
             try {
                 await Category.create({
                     value : category.value
@@ -34,7 +39,12 @@ let connectingToDb = async () => {
         });
     }, 1000);
     
-    setTimeout(() => {
+    setTimeout(async () => {
+        try {
+            await Product.deleteMany();
+        } catch (e) {
+            console.log(e)
+        }
         PRODUCTS.forEach(async (product) => {
     
             try {
@@ -63,7 +73,13 @@ let connectingToDb = async () => {
         
     }, 2000)
     
-    setTimeout(() => {
+    setTimeout(async () => {
+        try {
+            await User.deleteMany();
+            await Cart.deleteMany();
+        } catch (e) {
+            console.log(e)
+        }
         USERS.forEach(async (user) => {
         
             try {
