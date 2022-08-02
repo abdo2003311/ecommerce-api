@@ -17,19 +17,22 @@ app.use(cors());
 
 // connecting the DATABASE
 
-mongoose.connect(DATABASE,
-    () => {
-    console.log(`connected to ${DATABASE}`);
-    CATEGORIES.forEach(async (category) => {
-        try {
-            await Category.create({
-                value : category.value
-            });
-        } catch (e) {
-            console.log(e)
-        }
-    
-    });
+let connectingToDb = async () => {
+
+    await mongoose.connect(DATABASE);
+   
+    setTimeout(() => {
+        CATEGORIES.forEach(async (category) => {
+            try {
+                await Category.create({
+                    value : category.value
+                });
+            } catch (e) {
+                console.log(e)
+            }
+        
+        });
+    }, 1000);
     
     setTimeout(() => {
         PRODUCTS.forEach(async (product) => {
@@ -58,7 +61,7 @@ mongoose.connect(DATABASE,
         });
         
         
-    }, 500)
+    }, 2000)
     
     setTimeout(() => {
         USERS.forEach(async (user) => {
@@ -108,8 +111,13 @@ mongoose.connect(DATABASE,
             
         });
         
-    }, 1000)
-});
+    }, 3000);
+
+}
+
+connectingToDb();
+
+
 
 // starting the server
 
