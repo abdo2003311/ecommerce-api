@@ -71,7 +71,7 @@ let connectingToDb = async () => {
         });
         
         
-    }, 2000)
+    }, 5000)
     
     setTimeout(async () => {
         try {
@@ -127,7 +127,7 @@ let connectingToDb = async () => {
             
         });
         
-    }, 3000);
+    }, 7000);
 
 }
 

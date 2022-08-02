@@ -8,7 +8,7 @@ const PRODUCTS = [{
     },
     price : 100,
     count : 150,
-    image : `http://localhost:${process.env.PORT}/1.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/1.png`
 },
 {
     title : "Razer Kraken Ultimate RGB USB Gaming Headset: THX 7.1 Spatial Surround Sound - Chroma RGB Lighting - Retractable Active Noise Cancelling Mic - Aluminum & Steel Frame - for PC & Mac - Classic Black",
@@ -19,7 +19,7 @@ const PRODUCTS = [{
     },
     price : 500,
     count : 200,
-    image : `http://localhost:${process.env.PORT}/2.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/2.png`
 },
 {
     title : "SteelSeries Apex 3 TKL RGB Gaming Keyboard – Tenkeyless Compact Form Factor - 8-Zone RGB Illumination – IP32 Water & Dust Resistant – Whisper Quiet Gaming Switch – Gaming Grade Anti-Ghosting",
@@ -30,7 +30,7 @@ const PRODUCTS = [{
     },
     price : 1000,
     count : 5,
-    image : `http://localhost:${process.env.PORT}/3.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/3.png`
 },
 {
     title : "YSSOA FNGAMECHAIR01 Gaming Office High Back Computer Ergonomic Adjustable Swivel Chair with Headrest and Lumbar Support, with footrest, Red/Black",
@@ -41,7 +41,7 @@ const PRODUCTS = [{
     },
     price : 800,
     count : 142,
-    image : `http://localhost:${process.env.PORT}/4.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/4.png`
 },
 {
     title : "Razer Enki X Essential Gaming Chair: All-Day Gaming Comfort - Built-in Lumbar Arch - Optimized Cushion Density - Dual-Textured, Eco-Friendly Synthetic Leather - Adjustable 152-degree Recline",
@@ -52,7 +52,7 @@ const PRODUCTS = [{
     },
     price : 450,
     count : 11,
-    image : `http://localhost:${process.env.PORT}/5.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/5.png`
 },
 {
     title : "nfeeon Cat Bowl and Bowl Stand Stainless Steel,Stainless Steel Cat Double Bowl Comfortable Rustproof Elegant Easy to Manage Raised Dog Cat Feeder with Bamboo Stand Pet Supplies",
@@ -63,7 +63,7 @@ const PRODUCTS = [{
     },
     price : 20,
     count : 40,
-    image : `http://localhost:${process.env.PORT}/6.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/6.png`
 },
 {
     title : "LOLAY Straw Woven Cat Bed Bird Nest Cat Scratching Board Bowl-Shaped Pet Nest Cat Toy Supplies Hand-Woven Straw Bed (Medium)",
@@ -74,7 +74,7 @@ const PRODUCTS = [{
     },
     price : 60,
     count : 200 ,
-    image : `http://localhost:${process.env.PORT}/7.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/7.png`
 },
 {
     title : "Cat Food Spoon pet Food Spoon Dog Supplies Dog Food Spoon pet Food Spoon",
@@ -85,7 +85,7 @@ const PRODUCTS = [{
     },
     price : 40,
     count : 20,
-    image : `http://localhost:${process.env.PORT}/8.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/8.png`
 },
 {
     title : "NA Pet Supplies pet Toothpaste Dog Toothpaste Dog Cleaning Beauty Tools cat Oral Cleaning Beef Flavor",
@@ -96,7 +96,7 @@ const PRODUCTS = [{
     },
     price : 150,
     count : 40,
-    image : `http://localhost:${process.env.PORT}/9.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/9.png`
 },
 {
     title : "GYFCYGG PSM Pet Supplies Stainless Steel Dog Bowl Cat Bowl Cat Dog Dumpling Dog Basin Stainless Steel Pet Bowl (Color : Large, Size : Grey)",
@@ -107,7 +107,7 @@ const PRODUCTS = [{
     },
     price : 30,
     count : 17,
-    image : `http://localhost:${process.env.PORT}/10.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/10.png`
 },
 {
     title : "Amazon Basics 48 Pack AA High-Performance Alkaline Batteries, 10-Year Shelf Life, Easy to Open Value Pack",
@@ -118,7 +118,7 @@ const PRODUCTS = [{
     },
     price : 100,
     count : 24,
-    image : `http://localhost:${process.env.PORT}/11.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/11.png`
 },
 {
     title : "Apple AirPods (2nd Generation) Wireless Earbuds with Lightning Charging Case Included. Over 24 Hours of Battery Life, Effortless Setup. Bluetooth Headphones for iPhone",
@@ -129,7 +129,7 @@ const PRODUCTS = [{
     },
     price : 140,
     count : 78,
-    image : `http://localhost:${process.env.PORT}/12.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/12.png`
 },
 {
     title : "Roku Streaming Stick 4K 2021 | Streaming Device 4K/HDR/Dolby Vision with Roku Voice Remote and TV Controls",
@@ -140,7 +140,7 @@ const PRODUCTS = [{
     },
     price : 50,
     count : 80,
-    image : `http://localhost:${process.env.PORT}/13.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/13.png`
 },
 {
     title : "Apple 20W USB-C Power Adapter",
@@ -151,7 +151,7 @@ const PRODUCTS = [{
     },
     price : 120,
     count : 4,
-    image : `http://localhost:${process.env.PORT}/14.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/14.png`
 },
 {
     title : "Apple Pencil (2nd Generation), White",
@@ -162,7 +162,7 @@ const PRODUCTS = [{
     },
     price : 70,
     count : 231,
-    image : `http://localhost:${process.env.PORT}/15.png`
+    image : `https://ecommerce-fake-api.herokuapp.com/15.png`
 },];
 
 
