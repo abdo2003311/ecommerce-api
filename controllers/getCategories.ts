@@ -6,7 +6,7 @@ let getCategories = async (req : Request, res : Response) => {
     try {
 
         let categories = await Category.find();
-
+        
         res.status(200).send(categories)
 
     } catch (e) {

@@ -141,7 +141,7 @@ app.listen(PORT, () => console.log(`listening to port ${PORT}`));
 
 import { Cart, Category, Product, User } from './models';
 import { productsRouter, usersRouter } from './routers';
-import { adminAuthorization, getCarts, verifyToken } from './controllers';
+import { adminAuthorization, getCarts, getCategories, verifyToken } from './controllers';
 
 // creating database
 
@@ -149,4 +149,6 @@ import { adminAuthorization, getCarts, verifyToken } from './controllers';
 app.use('/api/products/', productsRouter);
 app.use('/api/users/', usersRouter);
 app.get('/api/carts', verifyToken, adminAuthorization, getCarts);
+app.get('/api/categories', getCategories);
+
 
