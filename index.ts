@@ -1,7 +1,7 @@
 import { hashSync } from 'bcryptjs';
 import express from 'express';
 const app = express();
-import mongoose from 'mongoose';
+import mongoose, { ConnectOptions } from 'mongoose';
 import { urlencoded, json } from 'express';
 import cors from 'cors';
 require('dotenv').config();
@@ -16,7 +16,8 @@ app.use(cors());
 
 // connecting the DATABASE
 
-mongoose.connect(DATABASE, () => {
+mongoose.connect(DATABASE,
+    () => {
     console.log(`connected to ${DATABASE}`);
 });
 
@@ -27,14 +28,19 @@ app.listen(PORT, () => console.log(`listening to port ${PORT}`));
 import { CATEGORIES, PRODUCTS, USERS } from './data';
 import { Cart, Category, Product, User } from './models';
 import { productsRouter, usersRouter } from './routers';
-import { adminLogin } from './controllers';
+import { adminAuthorization, getCarts, verifyToken } from './controllers';
 
 // creating database
 
 CATEGORIES.forEach(async (category) => {
-    await Category.create({
-        value : category.value
-    });
+    try {
+        await Category.create({
+            value : category.value
+        });
+    } catch (e) {
+        console.log(e)
+    }
+
 });
 
 setTimeout(() => {
@@ -98,7 +104,8 @@ setTimeout(() => {
                 address : {
                     city : user.address.city,
                     street : user.address.street
-                }
+                },
+                role : user.role
             });
     
             cart.userId = createdUser._id;
@@ -117,7 +124,7 @@ setTimeout(() => {
 
 
 
-app.post('/adminLogin', adminLogin);
 app.use('/api/products/', productsRouter);
 app.use('/api/users/', usersRouter);
+app.get('/api/carts', verifyToken, adminAuthorization, getCarts);
 

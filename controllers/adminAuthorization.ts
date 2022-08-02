@@ -1,14 +1,24 @@
 import { Request, Response } from 'express';
-import jwt from "jsonwebtoken";
+import { User } from '../models';
 
-const adminAuthorization = (req : Request, res : Response, next: () => void) => {
-    jwt.verify(req.headers.accesstoken as string, process.env.API_SECRET as string, function (err, decode : any) {
-        console.log(decode)
-        if ('admin' === decode.username && 'admin' === decode.password) {
+let adminAuthorization = async (req : Request, res : Response, next: () => void ): Promise<void> => {
+
+    try {
+
+        let admin = await User.findOne({ role : "admin" });
+
+        if (admin?._id.toString() === req.body.user.id) {
             next();
         } else {
-            res.status(403).send('not Authorized')
+            res.status(403).send('unAuth')
         }
-      });
+
+    } catch (e) {
+
+        res.status(500).send(e);
+
+    }
+
 }
-export default adminAuthorization;
+
+export default adminAuthorization

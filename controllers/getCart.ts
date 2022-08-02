@@ -3,11 +3,30 @@ import { Cart } from '../models';
 
 let getCart = async (req : Request, res : Response) : Promise<void> => {
 
-    let { id } = req.params;
+    try {
 
-    let cart = await Cart.findById(id).populate('products');
+        let { id } = req.params;
 
-    res.status(200).send(cart);
+        if (req.body.id === id) {
+    
+            let cart = await Cart.findById(id).populate('products');
+    
+            res.status(200).send(cart);
+    
+        } else {
+    
+            res.sendStatus(403);
+    
+        }
+
+    } catch (e) {
+
+        res.status(500).send(e);
+
+    }
+
+  
+
 
 };
 

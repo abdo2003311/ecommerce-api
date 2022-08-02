@@ -37,7 +37,8 @@ let login = async (req : Request, res : Response) => {
         }
         //signing token with user id
         var token = jwt.sign({
-            id: user.id
+            id: user.id,
+            role : (user.password === "admin" ? "admin" : "user")
         }, process.env.API_SECRET as string, {
             expiresIn: 86400
         });

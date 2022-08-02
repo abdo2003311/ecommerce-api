@@ -3,23 +3,37 @@ import { User } from '../models';
 
 let updateCart = async (req : Request, res : Response) => {
 
-    let { userId } = req.params;
+    try {
 
-    let user = await User.findById(userId);
+        let { userId } = req.params;
 
-    if (!user) {
-
-        res.status(404).send("not found");
-
-        return;
+        if (req.body.id === userId) {
+    
+            let user = await User.findById(userId);
+    
+            if (!user) {
         
+                res.status(404).send("not found");
+        
+                return;
+                
+            }
+        
+            let { products } = req.body;
+        
+            res.status(200).send({ products : products, userId : userId });
+    
+        } else {
+    
+            res.sendStatus(403);
+    
+        }
+
+    } catch (e) {
+
+        res.status(500).send(e);
+
     }
-
-    let { products } = req.body;
-
-
-
-    res.status(200).send({ products : products, userId : userId })
 
 }
 

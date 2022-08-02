@@ -3,11 +3,28 @@ import { Request, Response } from 'express';
 
 let deleteUser = async (req : Request, res : Response) : Promise<void> => {
 
-    let { id } = req.params;
+    try {
 
-    let user = await User.findById(id);
+        let { id } = req.params;
 
-    res.status(200).send(user);
+        if (id === req.body.user.id) {
+    
+            let user = await User.findById(id);
+    
+            res.status(200).send(user);
+    
+        } else {
+    
+            res.sendStatus(403);
+    
+        }
+
+    } catch (e) {
+
+        res.status(500).send(e);
+
+    }
+
 
 };
 

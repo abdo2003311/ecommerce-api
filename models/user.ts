@@ -53,8 +53,13 @@ let userSchema =  new Schema({
             minlength : 3,
             maxlength : 20  
         }
+    },
+    role : {
+        type : String,
+        required : true
     }
 });
+
 
 let User = model('User', userSchema);
 

@@ -8,7 +8,8 @@ const USERS = [{
     address : {
         city : "aleppo",
         street : "alexander street"
-    }
+    },
+    role : "admin"
 },
 {
     username : "jesus_11@45",
@@ -20,7 +21,8 @@ const USERS = [{
     address : {
         city : "damascus",
         street : "aziz"
-    }
+    },
+    role : "user"
 },
 {
     username : "m7rs55a",
@@ -32,7 +34,8 @@ const USERS = [{
     address : {
         city : "paris",
         street : "alan street"
-    }
+    },
+    role : "user"
 }
 ,
 {
@@ -45,7 +48,8 @@ const USERS = [{
     address : {
         city : "moscow",
         street : "jp street"
-    }
+    },
+    role : "user"
 }
 ,
 {
@@ -58,7 +62,8 @@ const USERS = [{
     address : {
         city : "riyad",
         street : "king street"
-    }
+    },
+    role : "user"
 }];
 
 export default USERS;

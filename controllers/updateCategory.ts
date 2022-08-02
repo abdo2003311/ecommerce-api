@@ -3,19 +3,27 @@ import { Category } from '../models';
 
 let updateCategory = async (req : Request, res : Response) => {
 
-    let { newCategory, oldCategory } = req.body;
+    try {
 
-    let category = await Category.findOne({ value : oldCategory });
+        let { newCategory, oldCategory } = req.body;
 
-    if (!category) {
+        let category = await Category.findOne({ value : oldCategory });
+    
+        if (!category) {
+    
+            res.status(404).send('not found')
+    
+            return;
+    
+        }
+    
+        res.status(200).send(newCategory)
 
-        res.status(404).send('not found')
+    } catch (e) {
 
-        return;
+        res.status(500).send(e);
 
     }
-
-    res.status(200).send(newCategory)
 
 
 }

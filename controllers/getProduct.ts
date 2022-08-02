@@ -3,11 +3,19 @@ import { Product } from '../models';
 
 let getProduct = async (req : Request, res : Response) : Promise<void> => {
 
-    let { id } = req.params;
+    try {
 
-    let product = await Product.findById(id).populate('category');
+        let { id } = req.params;
 
-    res.status(200).send(product);
+        let product = await Product.findById(id).populate('category');
+    
+        res.status(200).send(product);
+
+    } catch (e) {
+
+        res.status(500).send(e);
+
+    }
 
 };
 
